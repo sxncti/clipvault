@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.clipvault" path="/org/gnome/shell/extensions/clipvault/">
+    <key name="toggle-menu" type="as">
+      <default>['&lt;Super&gt;v']</default>
+      <summary>Atalho para abrir o histórico</summary>
+    </key>
+    <key name="history-size" type="i">
+      <range min="10" max="200"/>
+      <default>50</default>
+      <summary>Número máximo de itens no histórico</summary>
+    </key>
+    <key name="auto-paste" type="b">
+      <default>true</default>
+      <summary>Colar automaticamente o item selecionado</summary>
+    </key>
+    <key name="private-mode" type="b">
+      <default>false</default>
+      <summary>Pausar a captura de novos itens</summary>
+    </key>
+  </schema>
+</schemalist>

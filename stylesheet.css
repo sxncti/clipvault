@@ -1,0 +1,28 @@
+.clipvault-search {
+    min-width: 360px;
+    margin: 4px 2px;
+}
+
+.clipvault-row {
+    min-width: 430px;
+}
+
+.clipvault-row-label {
+    max-width: 330px;
+}
+
+.clipvault-action-button {
+    border-radius: 8px;
+    padding: 6px;
+    margin-left: 3px;
+}
+
+.clipvault-action-button:hover,
+.clipvault-action-button:focus {
+    background-color: rgba(128, 128, 128, 0.25);
+}
+
+.clipvault-empty {
+    color: rgba(200, 200, 200, 0.75);
+    font-style: italic;
+}

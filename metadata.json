@@ -1,0 +1,9 @@
+{
+  "uuid": "clipvault@sxncti.github.com",
+  "name": "ClipVault",
+  "description": "Histórico da área de transferência para GNOME, inspirado no Win+V.",
+  "shell-version": ["45", "46", "47", "48", "49", "50"],
+  "settings-schema": "org.gnome.shell.extensions.clipvault",
+  "url": "https://github.com/sxncti/clipvault",
+  "version": 1
+}
