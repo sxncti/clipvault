@@ -39,6 +39,15 @@ class ProjectTests(unittest.TestCase):
         self.assertNotIn("POLL_INTERVAL_MS", source)
         self.assertIn("x-kde-passwordManagerHint", source)
 
+    def test_panel_subclass_has_gtype(self):
+        source = (ROOT / "extension.js").read_text()
+        self.assertIn("import GObject from 'gi://GObject'", source)
+        self.assertRegex(
+            source,
+            r"GObject\.registerClass\(\s*class ClipboardIndicator",
+        )
+        self.assertIn("super._init(0.0, 'ClipVault')", source)
+
     def test_no_obvious_secrets(self):
         combined = "\n".join(
             path.read_text(errors="replace")

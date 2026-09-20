@@ -1,5 +1,6 @@
 import Clutter from 'gi://Clutter';
 import GLib from 'gi://GLib';
+import GObject from 'gi://GObject';
 import Meta from 'gi://Meta';
 import Shell from 'gi://Shell';
 import St from 'gi://St';
@@ -132,9 +133,10 @@ class HistoryStore {
     }
 }
 
+const ClipboardIndicator = GObject.registerClass(
 class ClipboardIndicator extends PanelMenu.Button {
-    constructor(extension, store, settings) {
-        super(0.0, 'ClipVault');
+    _init(extension, store, settings) {
+        super._init(0.0, 'ClipVault');
         this._extension = extension;
         this._store = store;
         this._settings = settings;
@@ -293,7 +295,7 @@ class ClipboardIndicator extends PanelMenu.Button {
         button.connect('clicked', callback);
         return button;
     }
-}
+});
 
 export default class ClipVaultExtension extends Extension {
     enable() {

@@ -101,6 +101,26 @@ Para acompanhar erros da extensão:
 journalctl --user -f -o cat /usr/bin/gnome-shell
 ```
 
+### O atalho não abre o menu
+
+Confira o estado da extensão:
+
+```bash
+gnome-extensions info clipvault@sxncti.github.com
+```
+
+Se aparecer `State: ERROR` depois de atualizar os arquivos, encerre a sessão e
+entre novamente. No Wayland, o GNOME Shell mantém o módulo JavaScript que falhou
+em memória e não consegue recarregá-lo por completo na mesma sessão.
+
+Confirme também que a bandeja de mensagens não está usando `Super + V`:
+
+```bash
+gsettings get org.gnome.shell.keybindings toggle-message-tray
+```
+
+O resultado recomendado é `['<Super>m']`.
+
 ## Desinstalação
 
 ```bash
