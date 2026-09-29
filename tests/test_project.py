@@ -39,6 +39,13 @@ class ProjectTests(unittest.TestCase):
         self.assertNotIn("POLL_INTERVAL_MS", source)
         self.assertIn("x-kde-passwordManagerHint", source)
 
+    def test_supports_images(self):
+        source = (ROOT / "extension.js").read_text()
+        self.assertIn("get_content(CLIPBOARD_TYPE", source)
+        self.assertIn("set_content(CLIPBOARD_TYPE", source)
+        self.assertIn("'image/png'", source)
+        self.assertIn("_pruneImages", source)
+
     def test_panel_subclass_has_gtype(self):
         source = (ROOT / "extension.js").read_text()
         self.assertIn("import GObject from 'gi://GObject'", source)
