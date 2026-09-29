@@ -2,12 +2,14 @@
 
 Histórico da área de transferência para GNOME Shell, inspirado no `Win + V`
 do Windows. Pressione `Super + V`, pesquise um texto e pressione `Enter` para
-colá-lo no aplicativo que estava ativo.
+colá-lo no aplicativo que estava ativo. Funciona com textos e imagens.
 
 ## Recursos
 
 - atalho global `Super + V`;
-- histórico persistente dos 50 textos mais recentes;
+- histórico persistente dos 50 itens mais recentes (textos e imagens);
+- miniaturas de imagens copiadas ou capturas de tela (PNG, JPEG, WebP, GIF,
+  BMP e TIFF, até 32 MB cada);
 - pesquisa instantânea;
 - navegação por teclado (`↓`, `↑`, `Enter` e `Esc`);
 - itens fixados, exclusão individual e limpeza dos itens não fixados;
@@ -19,8 +21,9 @@ colá-lo no aplicativo que estava ativo.
 
 > [!IMPORTANT]
 > Assim como qualquer gerenciador de clipboard, o ClipVault pode armazenar
-> senhas, tokens e outros textos sensíveis que você copiar. O arquivo fica local,
-> com permissão `0600`, em `~/.local/share/clipvault/history.json`.
+> senhas, tokens, imagens e outros dados sensíveis que você copiar. Os arquivos
+> ficam locais, com permissão `0600`, em `~/.local/share/clipvault/history.json`
+> e `~/.local/share/clipvault/images/`.
 
 ## Instalação
 
@@ -51,14 +54,16 @@ No X11, `Alt + F2`, seguido de `r`, também reinicia o GNOME Shell sem logout.
 
 ## Uso
 
-1. Copie textos normalmente com `Ctrl + C`.
+1. Copie textos ou imagens normalmente com `Ctrl + C` (ou tire uma captura de
+   tela para o clipboard).
 2. Pressione `Super + V` para abrir o histórico.
 3. Digite para pesquisar, pressione `↓` para entrar na lista e `Enter` para
-   escolher. O texto será colado automaticamente.
+   escolher. O item será colado automaticamente. Imagens aparecem com miniatura;
+   pesquise por `imagem` para listar só elas.
 
 O ícone de prancheta na barra superior abre o mesmo menu com o mouse. A estrela
 fixa um item; a lixeira o exclui. Ative **Modo privado** no rodapé para pausar a
-captura de novos textos.
+captura de novos itens.
 
 ## Configuração
 
@@ -82,7 +87,10 @@ gsettings set org.gnome.shell.extensions.clipvault toggle-menu "['<Super><Shift>
 
 ## Limitações
 
-- A versão atual guarda texto, não imagens ou arquivos.
+- Arquivos copiados no gerenciador de arquivos são guardados como texto
+  (caminho), não como arquivo.
+- Quando o clipboard oferece texto e imagem ao mesmo tempo (por exemplo,
+  células de planilha), o texto é guardado.
 - Aplicativos que bloqueiam eventos de teclado sintéticos podem exigir um
   `Ctrl + V` manual; o item selecionado já estará no clipboard.
 - O menu mostra até 12 resultados de cada vez; a pesquisa considera todo o

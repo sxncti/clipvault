@@ -26,3 +26,14 @@
     color: rgba(200, 200, 200, 0.75);
     font-style: italic;
 }
+
+.clipvault-thumbnail {
+    width: 96px;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 6px;
+    background-color: rgba(128, 128, 128, 0.15);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
